@@ -1,0 +1,325 @@
+:root {
+  --primary-color: #FF7396;
+  --secondary-color: #F4E06D;
+  --light-color: #FFFFDE;
+  --dark-color: #C499BA;
+  --max-width: 1100px;
+}
+
+.category {
+  --category-philosophy: #FF1700;
+  --category-psychology: #FF8E00;
+  --category-engineering: #3EC70B;
+  --category-politics: #3B44F6;
+  --category-law: #A149FA ;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'News Cycle', sans-serif;
+  font-size: 1 rem;
+  line-height: 1.5;
+  background-color: var(--light-color);
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+i {
+  margin-right: 0.3rem;
+}
+
+/* Utility */
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.category {
+  display: inline-block;  
+  color: #333;
+  font-size: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.4rem 0.6rem;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.category-philosophy {background: var(--category-philosophy);}
+.category-psychology {background: var(--category-psychology);}
+.category-engineering {background: var(--category-engineering);}
+.category-politics {background: var(--category-politics);}
+.category-law {background: var(--category-law);}
+
+.btn {
+  display:inline-block;
+  border: none;
+  background: var(--dark-color);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2px;
+}
+
+.btn-light {background: var(--light-color);}
+.btn-primary {background: var(--primary-color);}
+.btn-secondary {background: var(--secondary-color);}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;
+}
+
+.bg-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.bg-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.bg-secondary {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary a,
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary a {
+  color: #fff;
+}
+
+.article .card p{
+  text-align: justify;
+}
+
+/* Navigation */
+#main-nav {
+  background-color:#fff;
+  top: 0;
+  position: sticky;
+  z-index: 2;
+}
+
+#main-nav .container {
+  display: grid;
+  grid-template-columns: 6fr 3fr 2fr;
+  align-items: center;
+}
+
+#main-nav img,
+footer img {
+  height: 60px;
+  width: auto;
+}
+
+#main-nav ul {
+  justify-self: end;
+  display: flex;
+}
+
+#main-nav ul li a {
+  padding: 0.75rem;
+  font-weight: bold;
+}
+
+#main-nav ul li a.current {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+#main-nav ul li a:hover {
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+#main-nav .social {
+  justify-self: center;
+}
+
+#main-nav .social a{
+  color: var(--dark-color);
+  font-size: x-large;
+}
+#main-nav .social a:hover{
+  color: var(--primary-color);
+}
+
+/* Showcase */
+#showcase {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  position: relative;
+}
+
+#showcase:before{
+  content: '';
+  background: url(/img/wolf.jpg) no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+#showcase .showcase-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+#showcase .showcase-content {
+  z-index: 1;
+}
+
+/* Home Article */
+#home-article .article-container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 1rem;
+}
+
+#home-article .article-container > *:first-child,
+#home-article .article-container > *:last-child {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  grid-column: 1 / 3;
+}
+
+#home-article .article-container > *:last-child {
+  grid-column: 2 / 4;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+#home-article h2 {
+  border-bottom: #333 solid;
+  margin: 1rem 0;
+}
+
+/* About */
+#about h1 {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#about p {
+  text-align: justify;
+}
+
+/* Article Page */
+.page-container {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  margin: 2rem 0;
+  grid-gap: 1.5rem;
+}
+
+.page-container >*:first-child{
+  grid-row: 1 / 4;
+}
+
+.list a:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Footer */
+#main-footer {
+  background: var(--light-color);
+  color: #333;
+}
+
+#main-footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+#main-footer .footer-container > *:last-child {
+  grid-column: 1 / 5;
+  color: #333;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bolder;
+}
+
+#main-footer .footer-container input {
+  font-family: inherit;
+  font-weight: bolder;
+}
+
+#main-footer .footer-container input[type='email'] {
+  width: 90%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#main-footer .footer-container input[type='submit'] {
+  width: 90%;
+}
+
+#main-footer .footer-container input[type='submit'] {
+  cursor: pointer;
+}
+
+#main-footer ul li {
+  border-bottom: #333 solid 1px;
+}
+
+#main-footer ul li a:hover{
+  color: var(--primary-color);
+}
+
+#main-footer #mini-about {
+  text-align: justify;
+}
